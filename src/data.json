@@ -1,0 +1,164 @@
+{
+  "TermDeposit": {
+    "serviceDomain": "Term Deposit",
+    "serviceOperations": [
+      {
+        "name": "InitiateTermDeposit",
+        "description": "Open a short-term deposit with defined principal, interest, and term",
+        "executionFrequency": "OnDemand",
+        "accountingInstructions": [
+          {
+            "instructionType": "Credit",
+            "postingRule": "Credit customer term deposit account, debit funding account",
+            "trigger": "Initiation of deposit"
+          }
+        ]
+      },
+      {
+        "name": "ActivateTermDeposit",
+        "description": "Activate the term deposit and block the principal amount",
+        "executionFrequency": "OnDemand"
+      },
+      {
+        "name": "UpdateTermDeposit",
+        "description": "Modify term deposit details (e.g., term extension) if permitted by product rules",
+        "executionFrequency": "OnDemand"
+      },
+      {
+        "name": "ApplyInterestAccrual",
+        "description": "Apply daily/monthly interest accrual based on product configuration",
+        "executionFrequency": "Daily or Monthly (EOD)",
+        "accountingInstructions": [
+          {
+            "instructionType": "Accrual",
+            "postingRule": "Accrue interest periodically to interest payable account",
+            "trigger": "Daily or Monthly"
+          }
+        ]
+      },
+      {
+        "name": "MatureTermDeposit",
+        "description": "Mature the deposit at term end and return principal with interest",
+        "executionFrequency": "On Maturity Date",
+        "accountingInstructions": [
+          {
+            "instructionType": "Maturity",
+            "postingRule": "Credit interest and principal to customer settlement account",
+            "trigger": "On maturity date"
+          }
+        ]
+      },
+      {
+        "name": "BreakTermDeposit",
+        "description": "Break the deposit before maturity, applying interest penalty rules",
+        "executionFrequency": "OnDemand",
+        "accountingInstructions": [
+          {
+            "instructionType": "EarlyBreak",
+            "postingRule": "Apply penalty rule, refund adjusted amount to customer",
+            "trigger": "On early termination"
+          }
+        ]
+      },
+      {
+        "name": "ProvideDepositStatement",
+        "description": "Provide a summary statement for the term deposit",
+        "executionFrequency": "OnDemand or Monthly"
+      },
+      {
+        "name": "RetrieveDepositDetails",
+        "description": "Retrieve full configuration and balance of the term deposit",
+        "executionFrequency": "OnDemand"
+      },
+      {
+        "name": "TerminateTermDeposit",
+        "description": "Close or settle the term deposit account",
+        "executionFrequency": "OnDemand"
+      }
+    ]
+  },
+  "ProductDirectory": {
+    "serviceDomain": "Product Directory",
+    "serviceOperations": [
+      {
+        "name": "DefineProductParameters",
+        "description": "Create or maintain parameters for short-term deposit products",
+        "executionFrequency": "OnDemand"
+      },
+      {
+        "name": "UpdateProductParameters",
+        "description": "Update product configuration such as duration or rates",
+        "executionFrequency": "OnDemand"
+      },
+      {
+        "name": "RetrieveProductParameters",
+        "description": "Retrieve product features and eligibility rules",
+        "executionFrequency": "OnDemand"
+      }
+    ],
+    "productParameters": {
+      "organizationalScope": {
+        "description": "Describes where in the organization the product is available or managed: Organization-wide, Country-specific, Branch-specific.",
+        "organizationWide": true,
+        "countrySpecific": ["PL"],
+        "branchSpecific": false
+      },
+      "termOptions": ["1 month", "3 months", "6 months"],
+      "interestType": "Fixed or Variable",
+      "interestRateRange": "0.5% - 4.5% depending on term and amount",
+      "currency": "PLN",
+      "minimumDeposit": "1000 PLN",
+      "maximumDeposit": "No formal limit (may vary by customer profile)",
+      "renewalOption": "Manual or Auto-renew at maturity",
+      "earlyTerminationAllowed": true,
+      "earlyTerminationPenalty": "Forfeit all or part of accrued interest",
+      "targetSegments": ["Retail Individuals", "SMEs"],
+      "eligibility": "Account holder with KYC completed",
+      "channelAvailability": {
+        "description": "Defines through which channels the product is offered or serviced.",
+        "examples": ["Mobile app", "Web", "Branch", "Call Center", "Back-Office"]
+      }
+    }
+  },
+  "FinancialControl": {
+    "serviceDomain": "Financial Control",
+    "serviceOperations": [
+      {
+        "name": "RecordAccountingInstruction",
+        "description": "Define accounting rules for posting principal, interest, and penalties",
+        "executionFrequency": "OnDemand"
+      },
+      {
+        "name": "ApplyAccountingInstruction",
+        "description": "Post accounting entries to general ledger",
+        "executionFrequency": "OnDemand"
+      },
+      {
+        "name": "AdjustLedgerPosting",
+        "description": "Correct ledger entries if needed",
+        "executionFrequency": "OnDemand"
+      },
+      {
+        "name": "RetrieveLedgerBalance",
+        "description": "Retrieve current balance of deposit-related accounts",
+        "executionFrequency": "OnDemand"
+      }
+    ]
+  },
+  "CustomerRelationshipManagement": {
+    "serviceDomain": "Customer Relationship Management",
+    "serviceOperations": [
+      {
+        "name": "VerifyCustomerEligibility",
+        "description": "Ensure customer meets criteria to purchase the deposit",
+        "executionFrequency": "OnDemand"
+      },
+      {
+        "name": "AddProductToCustomerProfile",
+        "description": "Link the term deposit to customer's financial profile",
+        "executionFrequency": "OnDemand"
+      }
+    ]
+  }
+}
+
