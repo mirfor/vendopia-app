@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/vendopia_app/static/css/main.e6c13ad2.css",
+    "main.js": "/vendopia_app/static/js/main.4e8d8b9c.js",
+    "static/js/453.72823dd4.chunk.js": "/vendopia_app/static/js/453.72823dd4.chunk.js",
+    "index.html": "/vendopia_app/index.html",
+    "main.e6c13ad2.css.map": "/vendopia_app/static/css/main.e6c13ad2.css.map",
+    "main.4e8d8b9c.js.map": "/vendopia_app/static/js/main.4e8d8b9c.js.map",
+    "453.72823dd4.chunk.js.map": "/vendopia_app/static/js/453.72823dd4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.4e8d8b9c.js"
+  ]
+}
