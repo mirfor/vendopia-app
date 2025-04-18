@@ -3,6 +3,20 @@
   padding: 20px;
 }
 
+.welcome-message {
+  background-color: #e3f2fd;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  border: 1px solid #90caf9;
+}
+
+.welcome-message p {
+  margin: 0;
+  color: #1976d2;
+  font-weight: 500;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;

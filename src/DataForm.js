@@ -53,6 +53,9 @@ const DataForm = () => {
   return (
     <div className="container">
       <h1>Service Operations Manager</h1>
+      <div className="welcome-message">
+        <p>Welcome to the Service Operations Manager! This is a test deployment.</p>
+      </div>
       
       <div className="form-group">
         <label className="label">Select Service Domain</label>
