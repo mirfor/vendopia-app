@@ -1,38 +1,97 @@
 .App {
-  text-align: center;
+  text-align: left;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-group {
+  margin-bottom: 24px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.select, .input, .textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.operations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.operation-card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.operation-card.selected {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.operation-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.operation-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.operation-frequency {
+  font-size: 12px;
+  color: #888;
+}
+
+.button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: #3b82f6;
   color: white;
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+.button-secondary {
+  background-color: white;
+  color: #666;
+  border: 1px solid #ccc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.edit-form {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 24px;
+  margin-top: 24px;
 }
