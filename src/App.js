@@ -1,11 +1,13 @@
-import React from "react";
-import DataForm from "./DataForm";
-import "./App.css";
+import React from 'react';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <DataForm />
+      <header className="App-header">
+        <h1>Hello World</h1>
+        <p>Welcome to Vendopia App</p>
+      </header>
     </div>
   );
 }
