@@ -17,6 +17,12 @@
   font-weight: 500;
 }
 
+.deployment-info {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 8px !important;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;

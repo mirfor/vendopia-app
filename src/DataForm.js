@@ -54,7 +54,8 @@ const DataForm = () => {
     <div className="container">
       <h1>Service Operations Manager</h1>
       <div className="welcome-message">
-        <p>Welcome to the Service Operations Manager! This is a test deployment.</p>
+        <p>Welcome to the Service Operations Manager! Version 1.0.1</p>
+        <p className="deployment-info">Deployment verified: {new Date().toLocaleDateString()}</p>
       </div>
       
       <div className="form-group">
